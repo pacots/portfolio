@@ -1,6 +1,7 @@
 const target = document.querySelector('.target');
 const scoreDisplay = document.getElementById('score');
 let score = 0;
+let time = 1500;
 
 // Función para mover el objetivo
 function moveTarget() {
@@ -15,11 +16,12 @@ function moveTarget() {
 }
 
 // Cada 1.5 segundos, el objetivo se mueve
-setInterval(moveTarget, 1500);
+setInterval(moveTarget, time);
 
 // Cuando haces click en el objetivo, sumas puntos
 target.addEventListener('click', () => {
   score++;
+  if (time > 10) time -= 10;
   scoreDisplay.textContent = 'Puntos: ' + score;
   moveTarget();
 });
