@@ -69,3 +69,30 @@ footer {
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+/* --- Emoji pop --- */
+.emoji-pop {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  font-size: 3rem;
+  pointer-events: none;
+  opacity: 0;
+  animation: pop 600ms ease-out forwards;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
