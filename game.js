@@ -31,8 +31,8 @@ function showEmojiAtTarget() {
   // Posicionar emoji en el centro del círculo
   const targetRect = target.getBoundingClientRect();
   const areaRect = gameArea.getBoundingClientRect();
-  emojiEl.style.left = targetRect.left + 'px';
-  emojiEl.style.top = targetRect.top + 'px';
+  emojiEl.style.left = (targetRect.left - areaRect.left + target.clientWidth / 2) + 'px';
+  emojiEl.style.top = (targetRect.top - areaRect.top + target.clientHeight / 2) + 'px';
 
   gameArea.appendChild(emojiEl);
 
