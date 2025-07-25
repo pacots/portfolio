@@ -31,8 +31,8 @@ function showEmojiAtTarget() {
   // Posicionar emoji en el centro del círculo
   const targetRect = target.getBoundingClientRect();
   const areaRect = gameArea.getBoundingClientRect();
-  emojiEl.style.left = (targetRect.left - areaRect.left + target.clientWidth / 2) + 'px';
-  emojiEl.style.top = (targetRect.top - areaRect.top + target.clientHeight / 2) + 'px';
+  emojiEl.style.left = targetRect.left + 'px';
+  emojiEl.style.top = targetRect.top + 'px';
 
   gameArea.appendChild(emojiEl);
 
@@ -50,11 +50,11 @@ function showEmojiAtTarget() {
 // Cuando haces clic en el objetivo
 target.addEventListener('click', () => {
   score++;
-  scoreDisplay.textContent = 'Puntos: ' + score;
+  scoreDisplay.textContent = 'Score: ' + score;
   showEmojiAtTarget();
 
-  // Cada 3 puntos, aumentar velocidad (máximo 500ms)
-  if (score % 3 === 0 && speed > 500) {
+  // Cada 3 puntos, aumentar velocidad (mínimo 100ms)
+  if (score % 3 === 0 && speed > 100) {
     speed -= 150; 
     clearInterval(moveInterval);
     moveInterval = setInterval(moveTarget, speed);
