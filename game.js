@@ -54,10 +54,13 @@ target.addEventListener('click', () => {
   showEmojiAtTarget();
 
   // Cada 3 puntos, aumentar velocidad (mínimo 100ms)
-  if (score % 3 === 0 && speed > 50) {
+  if (speed > 50) {
     speed -= 50; 
     clearInterval(moveInterval);
     moveInterval = setInterval(moveTarget, speed);
+  }
+  else {
+    speed = 5;
   }
 });
 
