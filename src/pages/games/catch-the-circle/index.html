@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catch the Circle</title>
+  <link rel="stylesheet" href="catch-the-circle.css" />
+  <link rel="stylesheet" href="../../../components/navbar.css" />
+</head>
+<body>
+  <!-- Include Navbar Component -->
+  <div id="navbar" data-title="🎮 Catch the Circle"></div>
+
+  <section id="game">
+    <h2>🎯 Mini-game: Catch the circle!</h2>
+    <div class="game-area">
+      <div class="target"></div>
+    </div>
+    <p id="score">Score: 0</p>
+  </section>
+
+  <script src="catch-the-circle.js"></script>
+  <script>
+    // Load Navbar dynamically
+    document.addEventListener('DOMContentLoaded', () => {
+      const navbarContainer = document.getElementById('navbar');
+      const title = navbarContainer.getAttribute('data-title');
+
+      fetch('../../../components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          navbarContainer.innerHTML = html.replace('{{title}}', title);
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+    });
+  </script>
+</body>
+</html>

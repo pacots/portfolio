@@ -28,3 +28,29 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
+
+/* Estilos específicos para la página de juegos */
+#game-list {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+#game-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+#game-list li {
+  margin: 1rem 0;
+}
+
+#game-list a {
+  color: #1982c4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#game-list a:hover {
+  text-decoration: underline;
+}
