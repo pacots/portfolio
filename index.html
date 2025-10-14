@@ -239,6 +239,23 @@
         }
       });
     })();
+
+    // Compute dynamic scroll offset so the sticky header doesn't overlap anchors
+    (function(){
+      const header = document.querySelector('.site-header');
+      if (!header) return;
+      const setOffset = () => {
+        const h = header.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--nav-offset', (h + 12) + 'px');
+      };
+      setOffset();
+      window.addEventListener('resize', setOffset);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(setOffset);
+      }
+      // safety re-run after async layout shifts
+      setTimeout(setOffset, 200);
+    })();
   </script>
 </body>
 </html>

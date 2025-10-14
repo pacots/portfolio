@@ -6,6 +6,8 @@
   --accent: #38bdf8;
   --accent-2: #a78bfa;
   --card: #0b1220;
+  /* Dynamic offset for sticky header when jumping to #anchors */
+  --nav-offset: 0px;
 }
 
 * { box-sizing: border-box; }
@@ -20,6 +22,11 @@ body {
               radial-gradient(1000px 700px at 110% 10%, #0b1220 0%, transparent 60%),
               var(--bg);
 }
+
+/* Smooth scrolling and anchor offset so sticky header doesn't cover content */
+html { scroll-behavior: smooth; }
+/* Apply to any element that can be a fragment target (#id) */
+[id] { scroll-margin-top: var(--nav-offset); }
 
 .container {
   width: min(100%, 1000px);

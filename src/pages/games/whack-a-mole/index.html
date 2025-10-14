@@ -74,6 +74,7 @@
           navbarContainer.innerHTML = html.replace('{{title}}', title);
           adjustNavLinks(navbarContainer);
           setupResponsiveNav(navbarContainer);
+          setStickyOffset(navbarContainer);
         })
         .catch(error => console.error('Error loading navbar:', error));
     });
@@ -134,6 +135,20 @@
           moreBtn.setAttribute('aria-expanded', 'false');
         }
       });
+    }
+
+    // Ensure anchors aren't covered by the sticky header
+    function setStickyOffset(root) {
+      const header = root.querySelector('.site-header');
+      if (!header) return;
+      const setOffset = () => {
+        const h = header.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--nav-offset', (h + 12) + 'px');
+      };
+      setOffset();
+      window.addEventListener('resize', setOffset);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(setOffset);
+      setTimeout(setOffset, 200);
     }
   </script>
 </body>
