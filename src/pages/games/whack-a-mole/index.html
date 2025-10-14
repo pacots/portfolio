@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whack-a-Mole</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../style.css?v=20251013" />
+  <link rel="stylesheet" href="whack-a-mole.css" />
+  <link rel="stylesheet" href="../../../components/navbar.css" />
+</head>
+<body>
+  <!-- Include Navbar Component -->
+  <div id="navbar" data-title="🎮 Whack-a-Mole"></div>
+
+  <main class="container">
+    <section id="whack" class="section">
+      <h2>🐹 Mini-game: Whack-a-Mole</h2>
+
+      <div class="controls">
+        <div class="left">
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty" aria-label="Select difficulty">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hard">Hard</option>
+            <option value="insane">Insane</option>
+          </select>
+          <button id="startBtn">Start</button>
+          <button id="pauseBtn" disabled>Pause</button>
+          <button id="resetBtn" disabled>Reset</button>
+        </div>
+        <div class="right">
+          <span id="timer" class="chip" aria-live="polite">00:30</span>
+        </div>
+      </div>
+
+      <div class="board" role="application" aria-label="Whack-a-Mole board">
+        <!-- 3x3 grid of holes -->
+        <div class="hole"><button class="mole" aria-label="Mole">🐹</button></div>
+        <div class="hole"><button class="mole" aria-label="Mole">🐹</button></div>
+        <div class="hole"><button class="mole" aria-label="Mole">🐹</button></div>
+        <div class="hole"><button class="mole" aria-label="Mole">🐹</button></div>
+        <div class="hole"><button class="mole" aria-label="Mole">🐹</button></div>
+        <div class="hole"><button class="mole" aria-label="Mole">🐹</button></div>
+        <div class="hole"><button class="mole" aria-label="Mole">🐹</button></div>
+        <div class="hole"><button class="mole" aria-label="Mole">🐹</button></div>
+        <div class="hole"><button class="mole" aria-label="Mole">🐹</button></div>
+      </div>
+
+      <div class="stats">
+        <span id="score" class="chip">Score: 0</span>
+        <span id="highScore" class="chip">High: 0</span>
+        <span id="hits" class="chip">Hits: 0</span>
+        <span id="misses" class="chip">Misses: 0</span>
+        <span id="accuracy" class="chip">Accuracy: 0%</span>
+      </div>
+      <p class="hint">Tip: Space = Start/Pause · R = Reset</p>
+    </section>
+  </main>
+
+  <script src="whack-a-mole.js"></script>
+  <script>
+    // Load Navbar dynamically (same helper as other pages)
+    document.addEventListener('DOMContentLoaded', () => {
+      const navbarContainer = document.getElementById('navbar');
+      const title = navbarContainer.getAttribute('data-title');
+
+      fetch('../../../components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          navbarContainer.innerHTML = html.replace('{{title}}', title);
+          adjustNavLinks(navbarContainer);
+          setupResponsiveNav(navbarContainer);
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+    });
+
+    function adjustNavLinks(root) {
+      const base = (location.hostname.endsWith('github.io')) ? '/portfolio/' : '/';
+      root.querySelectorAll('.site-nav a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('/')) {
+          a.setAttribute('href', base + href.slice(1));
+        }
+      });
+    }
+
+    function setupResponsiveNav(root) {
+      const nav = root.querySelector('.site-nav');
+      const list = nav.querySelector('.nav-list');
+      const moreItem = list.querySelector('.more');
+      const moreBtn = moreItem.querySelector('.more-trigger');
+      const dropdown = moreItem.querySelector('.more-dropdown');
+
+      function layout() {
+        const back = Array.from(dropdown.children);
+        back.forEach(li => list.insertBefore(li, moreItem));
+        dropdown.innerHTML = '';
+
+        moreItem.hidden = true;
+        moreBtn.setAttribute('aria-expanded', 'false');
+        dropdown.style.display = 'none';
+
+        const maxWidth = nav.clientWidth;
+        let used = 0;
+        const items = Array.from(list.children).filter(li => li !== moreItem);
+        for (const li of items) {
+          li.style.display = '';
+          const w = li.getBoundingClientRect().width;
+          if (used + w > maxWidth - 60) {
+            moreItem.hidden = false;
+            dropdown.appendChild(li);
+          } else {
+            used += w;
+          }
+        }
+      }
+
+      window.addEventListener('resize', layout);
+      layout();
+
+      moreBtn.addEventListener('click', () => {
+        const open = dropdown.style.display === 'block';
+        dropdown.style.display = open ? 'none' : 'block';
+        moreBtn.setAttribute('aria-expanded', String(!open));
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!moreItem.contains(e.target)) {
+          dropdown.style.display = 'none';
+          moreBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
