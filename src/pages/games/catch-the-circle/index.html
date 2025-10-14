@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css" />
+  <link rel="stylesheet" href="../../../../style.css?v=20251013" />
   <link rel="stylesheet" href="catch-the-circle.css" />
   <link rel="stylesheet" href="../../../components/navbar.css" />
 </head>
@@ -63,10 +63,21 @@
         .then(response => response.text())
         .then(html => {
           navbarContainer.innerHTML = html.replace('{{title}}', title);
+          adjustNavLinks(navbarContainer);
           setupResponsiveNav(navbarContainer);
         })
         .catch(error => console.error('Error loading navbar:', error));
     });
+
+    function adjustNavLinks(root) {
+      const base = (location.hostname.endsWith('github.io')) ? '/portfolio/' : '/';
+      root.querySelectorAll('.site-nav a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('/')) {
+          a.setAttribute('href', base + href.slice(1));
+        }
+      });
+    }
 
     function setupResponsiveNav(root) {
       const nav = root.querySelector('.site-nav');

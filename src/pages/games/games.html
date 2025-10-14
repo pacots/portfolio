@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Games · Sara Rodriguez Rojo</title>
-  <link rel="stylesheet" href="../../../style.css" />
+  <link rel="stylesheet" href="../../../style.css?v=20251013" />
   <link rel="stylesheet" href="games.css" />
   <link rel="stylesheet" href="../../components/navbar.css" />
 </head>
@@ -33,9 +33,72 @@
       const title = navbarContainer.getAttribute('data-title');
       fetch('../../components/navbar.html')
         .then(r => r.text())
-        .then(html => navbarContainer.innerHTML = html.replace('{{title}}', title))
+        .then(html => {
+          navbarContainer.innerHTML = html.replace('{{title}}', title);
+          adjustNavLinks(navbarContainer);
+          setupResponsiveNav(navbarContainer);
+        })
         .catch(err => console.error('Error loading navbar:', err));
     });
+
+    function adjustNavLinks(root) {
+      const base = (location.hostname.endsWith('github.io')) ? '/portfolio/' : '/';
+      root.querySelectorAll('.site-nav a').forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('/')) {
+          a.setAttribute('href', base + href.slice(1));
+        }
+      });
+    }
+
+    function setupResponsiveNav(root) {
+      const nav = root.querySelector('.site-nav');
+      const list = nav.querySelector('.nav-list');
+      const moreItem = list.querySelector('.more');
+      const moreBtn = moreItem.querySelector('.more-trigger');
+      const dropdown = moreItem.querySelector('.more-dropdown');
+
+      function layout() {
+        const back = Array.from(dropdown.children);
+        back.forEach(li => list.insertBefore(li, moreItem));
+        dropdown.innerHTML = '';
+        moreItem.hidden = true;
+        moreBtn.setAttribute('aria-expanded', 'false');
+        dropdown.style.display = 'none';
+
+        const maxWidth = nav.clientWidth;
+        let used = 0;
+        const items = Array.from(list.children).filter(li => li !== moreItem);
+        for (const li of items) {
+          li.style.display = '';
+          const w = li.getBoundingClientRect().width;
+          if (used + w > maxWidth - 60) {
+            moreItem.hidden = false;
+            dropdown.appendChild(li);
+          } else {
+            used += w;
+          }
+        }
+      }
+
+      window.addEventListener('resize', layout);
+      window.addEventListener('load', layout);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+      setTimeout(layout, 300);
+      layout();
+
+      moreBtn.addEventListener('click', () => {
+        const open = dropdown.style.display === 'block';
+        dropdown.style.display = open ? 'none' : 'block';
+        moreBtn.setAttribute('aria-expanded', String(!open));
+      });
+      document.addEventListener('click', (e) => {
+        if (!moreItem.contains(e.target)) {
+          dropdown.style.display = 'none';
+          moreBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
   </script>
 </body>
 </html>
