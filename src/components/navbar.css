@@ -1,16 +1,2 @@
-header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-nav a {
-  margin: 0 1rem;
-  color: white;
-  text-decoration: none;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
+/* Navbar component uses global styles from root style.css */
+/* Intentionally left without overrides to avoid conflicts. */

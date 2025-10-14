@@ -1,38 +1,7 @@
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-}
-
-header {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-nav a {
-  margin: 0 1rem;
-  color: white;
-  text-decoration: none;
-}
-
-section {
-  padding: 2rem;
-}
-
-footer {
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-/* Estilos específicos para la página de juegos */
+/* Page-specific styles for Games index, global theme is in ../../../style.css */
 #game-list {
   text-align: center;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
   max-width: 800px;
 }
 
@@ -42,13 +11,13 @@ footer {
 }
 
 #game-list li {
-  margin: 1rem 0;
+  margin: 0.75rem 0;
 }
 
 #game-list a {
-  color: #1982c4;
+  color: var(--accent);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 #game-list a:hover {

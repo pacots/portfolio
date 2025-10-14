@@ -1,39 +1,238 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sara Rodriguez Rojo</title>
+  <meta name="description" content="Portfolio of Sara Rodriguez Rojo – Software Developer with a Double Degree in Computer Engineering and Business Management (UPM), interested in backend, algorithms, and applied AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Welcome!</h1>
-    <nav>
-      <a href="#about-me">About me</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a href="src/pages/games/games.html">Games</a>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div>
+        <h1 class="site-title">Sara Rodriguez Rojo</h1>
+        <p class="site-subtitle">Software Developer · Computer Engineering & Business · Chicago, IL</p>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#about-me">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a href="src/pages/games/games.html">Games</a>
+      </nav>
+    </div>
   </header>
 
-  <section id="about-me">
-    <h2>About me</h2>
-    <p>Bla bla bla</p>
-  </section>
+  <main class="container">
+    <section id="about-me" class="section">
+      <h2>About me</h2>
+      <p>
+        I’m a software developer who enjoys turning hard problems into clear, reliable software. I combine a strong
+        mathematical foundation with a hands‑on engineering mindset, built through a Double Degree in Computer
+        Engineering and Business Management (UPM). I’m particularly drawn to algorithms, backend systems, and the
+        points where technology meets business value.
+      </p>
+      <p>
+        While finishing my degree, I interned at DNV – Green Power Monitor (renewable energy), where I assessed
+        Apache Airflow for orchestration and built backend features in TypeScript/Node.js with MongoDB and
+        RabbitMQ (Feb–Aug 2024). Afterwards, I worked at Oxigent Technologies (Oct 2024–Jul 2025) serving
+        DNV–GPM as my main client, contributing across backend and some frontend, learning quickly and delivering
+        end‑to‑end features in Agile teams.
+      </p>
+      <p>
+        Since 2025 I’m on a dual‑degree path between UPM and the Illinois Institute of Technology, which brought me
+        from Madrid to Chicago. At IIT I’m pursuing a Master in Artificial Intelligence, deepening the mathematical and
+        theoretical underpinnings that inform my day‑to‑day engineering. I’m also interested in finance and business,
+        and I look for roles where I can bridge rigorous problem solving with measurable impact.
+      </p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Ble ble ble</p>
-  </section>
+    <section id="experience" class="section">
+      <h2>Professional Experience</h2>
+      <article class="card">
+        <header class="card-header">
+          <h3>Consultant, Junior Associate · Oxigent Technologies</h3>
+          <div class="meta">Oct 2024 – Jul 2025 · Client: DNV – Green Power Monitor · Node.js & Angular</div>
+        </header>
+        <ul>
+          <li>Backend development in Node.js/TypeScript; contributed to frontend features in Angular.</li>
+          <li>Primary client DNV – Green Power Monitor (renewable energy domain).</li>
+          <li>Self-driven learning to ramp up on new stacks and deliver end-to-end features.</li>
+          <li>Worked within Agile (Scrum) sprints to collaborate and iterate quickly.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <header class="card-header">
+          <h3>Software Developer Intern · DNV Green Power Monitor (Madrid)</h3>
+          <div class="meta">Feb 2024 – Aug 2024 · Renewable energy · Backend & Data Workflows</div>
+        </header>
+        <ul>
+          <li>Back-end development of client features in Node.js/TypeScript.</li>
+          <li>Migrated 5 microservices to Apache Airflow for monitoring and orchestration.</li>
+          <li>Worked with MongoDB and RabbitMQ in production environments.</li>
+        </ul>
+      </article>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>You can reach me at: <a href="mailto:blublublu@example.com">blublublu@example.com</a></p>
-  </section>
+    <section id="projects" class="section">
+      <h2>Featured Projects</h2>
+      <ul class="link-list">
+        <li>
+          Minishell (C): basic command shell ·
+          <a href="https://gitfront.io/r/user-1266459/MexsQZRaCHWV/Minishell/" target="_blank" rel="noopener noreferrer">Repository</a>
+        </li>
+        <li>
+          Basic JavaScript Processor (Java) ·
+          <a href="https://gitfront.io/r/user-1266459/bzqGAAfqLWV8/Procesador-JavaScript/" target="_blank" rel="noopener noreferrer">Repository</a>
+        </li>
+        <li>
+          Declarative Logic Exercises (Prolog, Ciao) ·
+          <a href="https://gitfront.io/r/user-1266459/SMjrFHDnvVj5/Ejercicios-Logica-Declarativa/" target="_blank" rel="noopener noreferrer">Repository</a>
+        </li>
+      </ul>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Sara Rodriguez Rojo</p>
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <article class="card">
+        <header class="card-header">
+          <h3>Master in Artificial Intelligence · Illinois Institute of Technology</h3>
+          <div class="meta">Aug 2025 – Jul 2026 · GPA 3.4 · Dual-degree track with UPM · Currently studying</div>
+        </header>
+      </article>
+      <article class="card">
+        <header class="card-header">
+          <h3>Master in Computer Engineering · Polytechnic University of Madrid</h3>
+          <div class="meta">Sep 2024 – Jul 2026 · Dual-degree pathway with IIT</div>
+        </header>
+      </article>
+      <article class="card">
+        <header class="card-header">
+          <h3>Double Degree in Computer Engineering and Business Management · UPM</h3>
+          <div class="meta">Sep 2019 – Jul 2024 · GPA 3.5</div>
+        </header>
+        <ul>
+          <li>Thesis (Computer Engineering): Decision-Making Methods Based on Fuzzy Preference Relations.</li>
+          <li>Thesis (Business Management): Optimization of the Company’s Capital Structure.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <h3>Programming</h3>
+          <p>Java, C, Python, JavaScript/TypeScript, SQL, Bash, C++, Assembly, Prolog (Ciao), MATLAB</p>
+        </div>
+        <div>
+          <h3>Tools & Platforms</h3>
+          <p>Node.js, Angular, Apache Airflow, MongoDB, RabbitMQ, Git</p>
+        </div>
+        <div>
+          <h3>Languages</h3>
+          <p>Spanish (Native), English (Advanced C1 · IELTS & Cambridge)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="section">
+      <h2>Awards & Activities</h2>
+      <ul>
+        <li>Member of IEEE – Eta Kappa Nu.</li>
+        <li>Excellence Scholarship from the Community of Madrid (2020, 2021, 2022, 2023).</li>
+        <li>Team Programming Competitions (2021, 2022) organized by the ACM student association.</li>
+        <li>Global Management Challenge (2019), team leader in business management.</li>
+        <li>Bayer–Agorize Open Innovation Contest 2022, focused on Data Science.</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><strong>Email:</strong> <a href="mailto:sara.rod.rojo@gmail.com">sara.rod.rojo@gmail.com</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sara-rodriguez-rojo/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sara-rodriguez-rojo</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+18722000481">+1 (872) 200 0481</a></li>
+        <li><strong>Location:</strong> Chicago, Illinois</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Sara Rodriguez Rojo</p>
+    </div>
   </footer>
+  <script>
+    // Enhance inline nav with overflow handling into More dropdown
+    (function(){
+      const root = document.body;
+      const nav = root.querySelector('.site-nav');
+      if (!nav) return;
+      // If nav already uses UL from component, enhance; else, wrap links
+      let list = nav.querySelector('.nav-list');
+      if (!list) {
+        const links = Array.from(nav.querySelectorAll('a'));
+        list = document.createElement('ul');
+        list.className = 'nav-list';
+        links.forEach(a => { const li = document.createElement('li'); li.appendChild(a); list.appendChild(li); });
+        const more = document.createElement('li');
+        more.className = 'more';
+        more.hidden = true;
+        more.innerHTML = '<button class="more-trigger" aria-haspopup="true" aria-expanded="false" aria-label="More">⋯</button><ul class="more-dropdown" role="menu"></ul>';
+        list.appendChild(more);
+        nav.innerHTML = '';
+        nav.appendChild(list);
+      }
+
+      const moreItem = list.querySelector('.more');
+      const moreBtn = moreItem.querySelector('.more-trigger');
+      const dropdown = moreItem.querySelector('.more-dropdown');
+
+      function layout(){
+        const back = Array.from(dropdown.children);
+        back.forEach(li => list.insertBefore(li, moreItem));
+        dropdown.innerHTML = '';
+        moreItem.hidden = true;
+        moreBtn.setAttribute('aria-expanded','false');
+        dropdown.style.display = 'none';
+
+        const maxWidth = nav.clientWidth;
+        let used = 0;
+        const items = Array.from(list.children).filter(li => li !== moreItem);
+        for (const li of items) {
+          li.style.display = '';
+          const w = li.getBoundingClientRect().width;
+          if (used + w > maxWidth - 60) {
+            moreItem.hidden = false;
+            dropdown.appendChild(li);
+          } else {
+            used += w;
+          }
+        }
+      }
+
+      window.addEventListener('resize', layout);
+      layout();
+
+      moreBtn.addEventListener('click', () => {
+        const open = dropdown.style.display === 'block';
+        dropdown.style.display = open ? 'none' : 'block';
+        moreBtn.setAttribute('aria-expanded', String(!open));
+      });
+      document.addEventListener('click', (e) => {
+        if (!moreItem.contains(e.target)) {
+          dropdown.style.display = 'none';
+          moreBtn.setAttribute('aria-expanded','false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

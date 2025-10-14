@@ -1,9 +1,24 @@
-<header>
-  <h1>{{title}}</h1>
-  <nav>
-    <a href="/index.html">Home</a>
-    <a href="/index.html#about-me">About Me</a>
-    <a href="/index.html#contact">Contact</a>
-    <a href="/src/pages/games/games.html">Games</a>
-  </nav>
+<header class="site-header">
+  <div class="container header-inner">
+    <div>
+      <h1 class="site-title">{{title}}</h1>
+      <p class="site-subtitle">Software Developer · Computer Engineering & Business · Chicago, IL</p>
+    </div>
+    <nav class="site-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/index.html#about-me">About</a></li>
+        <li><a href="/index.html#experience">Experience</a></li>
+        <li><a href="/index.html#projects">Projects</a></li>
+        <li><a href="/index.html#education">Education</a></li>
+        <li><a href="/index.html#skills">Skills</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+        <li><a href="/src/pages/games/games.html">Games</a></li>
+        <li class="more" hidden>
+          <button class="more-trigger" aria-haspopup="true" aria-expanded="false" aria-label="More">⋯</button>
+          <ul class="more-dropdown" role="menu"></ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
