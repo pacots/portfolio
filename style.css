@@ -1,6 +1,6 @@
 * { box-sizing: border-box; }
 
-:root {
+/* :root {
   --bg: #040404;
   --bg-soft: #0c111f;
   --panel: #111b2e;
@@ -14,11 +14,11 @@
   --radius-m: 18px;
   --radius-s: 10px;
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-}
+} */
 
 html { scroll-behavior: smooth; }
 
-body {
+/* body {
   font-family: 'IBM Plex Sans', 'Space Grotesk', sans-serif;
   margin: 0;
   background: radial-gradient(120% 120% at 10% 0%, rgba(39,193,193,0.35), transparent),
@@ -27,7 +27,7 @@ body {
   color: var(--text);
   line-height: 1.7;
   min-height: 100vh;
-}
+} */
 
 * { box-sizing: border-box; }
 
