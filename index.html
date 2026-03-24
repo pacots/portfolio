@@ -3,15 +3,504 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sara Rodriguez Rojo - Software Engineer</title>
-  <meta name="description" content="Portfolio of Sara Rodriguez Rojo: software engineer in a dual master's program (AI at Illinois Tech + Computer Engineering at Polytechnic University of Madrid)." />
+  <title>Sara Rodriguez Rojo | Software Engineer</title>
+  <meta
+    name="description"
+    content="Sara Rodriguez Rojo is a Software Engineer and Artificial Intelligence master's student focused on backend systems, data pipelines, and practical machine learning."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260110" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --panel: rgba(255, 255, 255, 0.72);
+      --text: #171717;
+      --muted: #5f5f5f;
+      --accent: #111111;
+      --shadow: 0 10px 30px rgba(23, 23, 23, 0.06);
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(224, 217, 201, 0.7), transparent 34%),
+        radial-gradient(circle at 90% 12%, rgba(214, 228, 223, 0.55), transparent 26%),
+        linear-gradient(180deg, #f7f4ee 0%, #f4f1ea 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(246, 244, 239, 0.72);
+      border-bottom: 1px solid rgba(23, 23, 23, 0.06);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      color: var(--text);
+    }
+
+    .nav-toggle {
+      display: none;
+      appearance: none;
+      border: 0;
+      background: transparent;
+      font: inherit;
+      color: var(--text);
+      padding: 0.5rem 0.25rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      padding: 5.5rem 0 2rem;
+    }
+
+    .hero__wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.9fr);
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .hero__main,
+    .hero__side,
+    .card,
+    .project,
+    .timeline__item,
+    .skill,
+    .contact-card {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero__main {
+      border-radius: 36px;
+      padding: 2.5rem;
+      min-height: 540px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 1rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.55;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 5.3rem);
+      max-width: 10ch;
+    }
+
+    .hero__main h1 span {
+      font-family: "DM Serif Display", serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero__summary {
+      max-width: 65ch;
+      margin: 1.5rem 0 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .hero__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.75rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      color: var(--text);
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 48px;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(23, 23, 23, 0.1);
+      font-weight: 600;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .btn--secondary {
+      background: rgba(255,255,255,0.68);
+      color: var(--text);
+    }
+
+    .hero__side {
+      border-radius: 30px;
+      padding: 1.4rem;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 1rem;
+      min-height: 540px;
+    }
+
+    .portrait {
+      border-radius: 24px;
+      min-height: 240px;
+      background:
+        linear-gradient(135deg, rgba(23,23,23,0.96), rgba(23,23,23,0.82)),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2), transparent 20%),
+        linear-gradient(160deg, #2e2e2e 0%, #1d1d1d 100%);
+      padding: 1.4rem;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .portrait::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(255,255,255,0.14), transparent 66%);
+      z-index: -1;
+    }
+
+    .portrait__label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .portrait h2 {
+      font-size: 1.8rem;
+      line-height: 1.05;
+      margin-top: 0.5rem;
+    }
+
+    .side-block {
+      padding: 1.2rem;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(23,23,23,0.08);
+    }
+
+    .side-block h3,
+    .section-title h2,
+    .card h3,
+    .project h3,
+    .timeline__item h3,
+    .skill h3,
+    .contact-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .side-block p,
+    .side-block li,
+    .card p,
+    .project p,
+    .timeline__item p,
+    .skill p,
+    .contact-card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .side-block ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .section {
+      padding: 1.2rem 0;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+    }
+
+    .section-title p {
+      color: var(--muted);
+      margin: 0;
+      max-width: 42ch;
+    }
+
+    .cards,
+    .projects,
+    .skills-grid,
+    .contact-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      border-radius: 28px;
+      padding: 1.4rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline__item {
+      border-radius: 28px;
+      padding: 1.4rem;
+    }
+
+    .timeline__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-tag {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .timeline__item p + p {
+      margin-top: 0.7rem;
+    }
+
+    .projects {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project {
+      border-radius: 28px;
+      padding: 1.4rem;
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project__tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .project a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 1rem;
+      font-weight: 600;
+    }
+
+    .skills-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .skill {
+      border-radius: 24px;
+      padding: 1.25rem;
+      min-height: 180px;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1.25fr 0.75fr;
+    }
+
+    .contact-card {
+      border-radius: 28px;
+      padding: 1.5rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.95rem 1rem;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(23,23,23,0.08);
+      flex-wrap: wrap;
+    }
+
+    .contact-row span {
+      color: var(--muted);
+    }
+
+    .site-footer {
+      padding: 1.5rem 0 2.5rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1024px) {
+      .hero__wrap,
+      .contact-grid,
+      .skills-grid,
+      .cards,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .hero__main,
+      .hero__side { min-height: auto; }
+    }
+
+    @media (max-width: 760px) {
+      .site-nav {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 1rem;
+        left: 1rem;
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding: 1rem;
+        border-radius: 20px;
+        background: rgba(255,255,255,0.92);
+        border: 1px solid rgba(23,23,23,0.08);
+        box-shadow: var(--shadow);
+      }
+
+      .site-nav--open { display: flex; }
+      .nav-toggle { display: inline-flex; }
+      .hero { padding-top: 4rem; }
+      .hero__main { padding: 1.5rem; border-radius: 26px; }
+      .hero__side,
+      .card,
+      .project,
+      .timeline__item,
+      .skill,
+      .contact-card { border-radius: 22px; }
+      .section-title { align-items: flex-start; flex-direction: column; }
+      .contact-row { align-items: flex-start; flex-direction: column; }
+      h1 { max-width: 11ch; }
+    }
+  </style>
 </head>
 <body>
-  <div class="ink" aria-hidden="true"></div>
   <header class="site-header" id="top">
     <div class="container">
       <a class="brand" href="#top">Sara Rodriguez Rojo</a>
@@ -19,8 +508,8 @@
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
         <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -28,89 +517,158 @@
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="intro-title">
-      <div class="container hero__inner">
-        <div>
-          <p class="eyebrow">Computer Engineering & Business - M.A.S Artificial Intelligence</p>
-          <h1 id="intro-title">AI graduate student with engineering and business background.</h1>
-          <p class="hero__summary">
-            I'm a computer engineer with a business background, currently completing a double master's 
-            in Computer Engineering and AI between Spain and the U.S. I've worked at DNV (intern and 
-            software engineer) and I'm drawn to programming problems that mix logic, math and real-world 
-            decision-making.
-          </p>
-          <ul class="hero__list">
-            <li>Plenty of industry context from Oxigent Technologies and DNV Green Power Monitor; Currently a full-time student in Chicago</li>
-            <li>Hands-on with Node.js, Angular, Python, MongoDB, RabbitMQ and Apache Airflow.</li>
-            <li>Open to US-based roles starting May 2026.</li>
-          </ul>
+    <section class="hero">
+      <div class="container hero__wrap">
+        <div class="hero__main">
+          <div>
+            <p class="eyebrow">Software Engineer · Chicago</p>
+            <h1>Software, data, and <span>applied AI.</span></h1>
+            <p class="hero__summary">
+              I am a Software Engineer with a background in engineering and business, currently pursuing an M.A.S. in Artificial Intelligence at Illinois Tech. My work so far has focused on backend systems, ETL pipelines, and applied machine learning.
+            </p>
+            <div class="hero__meta">
+              <span class="pill">M.A.S. in Artificial Intelligence</span>
+              <span class="pill">Backend & Data Systems</span>
+              <span class="pill">Chicago, Illinois</span>
+            </div>
+          </div>
+
           <div class="hero__actions">
-            <a class="btn" href="mailto:sara.rod.rojo@gmail.com">Email me</a>
-            <a class="btn btn--ghost" href="https://www.linkedin.com/in/sara-rodriguez-rojo/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn--ghost" href="https://github.com/pacots" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn--primary" href="mailto:sara.rod.rojo@gmail.com">Email</a>
+            <a class="btn btn--secondary" href="https://www.linkedin.com/in/sara-rodriguez-rojo/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn--secondary" href="https://github.com/pacots" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
-        <div class="hero__notes">
-          <p>What I enjoy working on:</p>
-          <ol>
-            <li>Problems that require careful reasoning, not just trial and error.</li>
-            <li>Projects where theory and implementation meet.</li>
-          </ol>
-        </div>
+
+        <aside class="hero__side">
+          <div class="portrait">
+            <div>
+              <p class="portrait__label">Current focus</p>
+              <h2>Backend systems, data workflows, and AI projects.</h2>
+            </div>
+            <p>I like clear thinking, solid engineering, and AI applied in a practical way.</p>
+          </div>
+
+          <div class="side-block">
+            <h3>What I work on</h3>
+            <ul>
+              <li>Backend development and event-driven systems</li>
+              <li>ETL pipelines and data processing workflows</li>
+              <li>Machine learning, forecasting, and AI coursework</li>
+            </ul>
+          </div>
+
+          <div class="side-block">
+            <h3>Core stack</h3>
+            <p>Python, Node.js, TypeScript, RabbitMQ, Airflow, MongoDB, Angular, SQL, Git, Kubernetes.</p>
+          </div>
+        </aside>
       </div>
     </section>
 
     <section id="about" class="section">
       <div class="container">
-        <div class="section__header">
-          <p class="eyebrow">About</p>
-          <h2>I like problems that make you think</h2>
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2>A technical profile with a broad foundation.</h2>
+          </div>
+          <p>
+            I studied computer engineering and business administration in Madrid, and I am currently pursuing a master’s degree in Artificial Intelligence in Chicago.
+          </p>
         </div>
-        <div class="about">
-          <p>
-            Madrid is home, and it's where I completed the double Computer Engineering + Business Management degree at Polytechnic University of Madrid. Chicago is
-            where I study right now, finishing the Illinois Tech Master in Artificial Intelligence alongside the Computer Engineering
-            master at Polytechnic University of Madrid.
-          </p>
-          <p>
-            I've always gravitated toward logic problems and math-heavy coursework, so the engineering side never felt abstract. During
-            the degree I fell in love with programming labs and algorithm design, but the business path also hooked me on entrepreneurship,
-            finance and how companies take decisions.
-          </p>
-          <p>
-            I like projects where data engineers, product leads and researchers sit at the same table. The business training helps me
-            translate constraints; the engineering training keeps me honest about the effort involved.
-          </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>How I work</h3>
+            <p>
+              I enjoy structured problems, collaborative teams, and projects where engineering, data, and software come together in a clear way. Most of my recent work has been around backend services, integrations, and data-heavy workflows.
+            </p>
+          </article>
+          <article class="card">
+            <h3>What I’m looking for</h3>
+            <p>
+              I’m interested in software engineering, AI, or data-focused roles where I can keep building strong technical foundations, learn quickly, and contribute to useful, well-executed products.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section light">
+    <section id="experience" class="section">
       <div class="container">
-        <div class="section__header">
-          <p class="eyebrow">Experience</p>
-          <h2>Roles</h2>
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Experience</p>
+            <h2>Recent work</h2>
+          </div>
+          <p>Early-career experience in software development, event-driven systems, and data pipeline work.</p>
         </div>
-        <div class="cards">
-          <article>
-            <header>
-              <h3>Consultant, Junior Associate - Oxigent Technologies</h3>
-              <p>Oct 2024 - Jul 2025 - Madrid & remote - Client: DNV Green Power Monitor</p>
-            </header>
-            <ul>
-              <li>Worked end to end on backend and frontend features using Node.js and Angular within an international Agile team.</li>
-              <li>Refactored core logic to support recursive and nested data structures for enterprise renewable energy clients.</li>
-            </ul>
+
+        <div class="timeline">
+          <article class="timeline__item">
+            <div class="timeline__meta">
+              <h3>Consultant, Junior Associate · Oxigent Technologies</h3>
+              <span class="meta-tag">Oct 2024 — Jul 2025</span>
+            </div>
+            <p>
+              Built end-to-end backend and frontend features within an international Agile team.
+            </p>
+            <p>
+              Developed an event-driven email alert microservice for a Jira-style ticketing system using Node.js and RabbitMQ, processing more than 25,000 events and notifications per month for enterprise energy clients.
+            </p>
           </article>
-          <article>
-            <header>
-              <h3>Software Developer Intern - DNV Green Power Monitor</h3>
-              <p>Feb 2024 - Aug 2024 - Madrid</p>
-            </header>
-            <ul>
-              <li>Migrated data-loading microservices from TypeScript to Python, improving Apache Airflow reliability.</li>
-              <li>Developed backend APIs and dashboards with Node.js, Angular, MongoDB and RabbitMQ.</li>
-            </ul>
+
+          <article class="timeline__item">
+            <div class="timeline__meta">
+              <h3>Software Developer Intern · DNV Green Power Monitor</h3>
+              <span class="meta-tag">Feb 2024 — Aug 2024</span>
+            </div>
+            <p>
+              Migrated five data ingestion microservices from TypeScript to Python and used Apache Airflow to build more fault-tolerant ETL workflows with automated error recovery.
+            </p>
+            <p>
+              Developed backend services and frontend dashboards for renewable energy management platforms using Node.js, Angular, and MongoDB.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Education</p>
+            <h2>Academic background</h2>
+          </div>
+          <p>Graduate studies in AI and computer engineering, built on a dual undergraduate background in engineering and business.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline__item">
+            <div class="timeline__meta">
+              <h3>M.A.S. in Artificial Intelligence · Illinois Institute of Technology</h3>
+              <span class="meta-tag">Aug 2025 — Aug 2026</span>
+            </div>
+            <p><strong>Current GPA:</strong> 4.0/4.0 · Dual Master’s Degree Program</p>
+            <p><strong>Relevant coursework:</strong> Advanced AI, Time Series Analysis and Forecasting, Machine Learning.</p>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__meta">
+              <h3>M.S. in Computer Engineering · Polytechnic University of Madrid</h3>
+              <span class="meta-tag">Sep 2024 — Aug 2026</span>
+            </div>
+            <p><strong>GPA:</strong> 3.4/4.0 · Dual Master’s Degree Program</p>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__meta">
+              <h3>Dual Bachelor’s Degree: B.S. in Computer Engineering and B.B.A.</h3>
+              <span class="meta-tag">Sep 2019 — Jul 2024</span>
+            </div>
+            <p>Polytechnic University of Madrid · <strong>GPA:</strong> 3.5/4.0</p>
           </article>
         </div>
       </div>
@@ -118,94 +676,49 @@
 
     <section id="projects" class="section">
       <div class="container">
-        <div class="section__header">
-          <p class="eyebrow">Projects</p>
-          <h2>Selected Projects</h2>
-        </div>
-        <div class="grid">
-          <article>
-            <h3>Minishell</h3>
-            <p>UNIX-style shell in C with piping, environment management and error handling.</p>
-            <a href="https://gitfront.io/r/user-1266459/MexsQZRaCHWV/Minishell/" target="_blank" rel="noopener">Repository</a>
-          </article>
-
-          <article>
-            <h3>JavaScript Processor</h3>
-            <p>Parser and interpreter in Java that reproduces a subset of JavaScript semantics.</p>
-            <a href="https://gitfront.io/r/user-1266459/bzqGAAfqLWV8/Procesador-JavaScript/" target="_blank" rel="noopener">Repository</a>
-          </article>
-
-          <article>
-            <h3>Asteroid Field (OpenGL)</h3>
-            <p>Procedural asteroid field with GPU tessellation LOD, frustum culling and instanced rendering (C++/OpenGL).</p>
-            <a href="https://github.com/pacots/asteroid-field" target="_blank" rel="noopener">Repository</a>
-          </article>
-
-          <article>
-            <h3>YOLOv0 from scratch</h3>
-            <p>A simplified YOLO-style detector built in a Python notebook to understand detection fundamentals end to end.</p>
-            <a href="https://github.com/pacots/YOLOv0" target="_blank" rel="noopener">Repository</a>
-          </article>
-
-          <article>
-            <h3>YOLOv7 + Coordinate Attention</h3>
-            <p>Experimented with adding Coordinate Attention to YOLOv7 and evaluated its impact on small object detection.</p>
-            <a href="https://github.com/pacots/YOLOv7-CoordinateAttention" target="_blank" rel="noopener">Repository</a>
-          </article>
-
-          <article>
-            <h3>ML Implementations</h3>
-            <p>Implementations of classic ML models to practice the math and the mechanics.</p>
-            <a href="https://github.com/pacots/ML-Implementations" target="_blank" rel="noopener">Repository</a>
-          </article>
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Projects</p>
+            <h2>Selected projects</h2>
+          </div>
+          <p>A few projects in computer vision, forecasting, and systems programming.</p>
         </div>
 
-      </div>
-    </section>
+        <div class="projects">
+          <article class="project">
+            <div>
+              <p class="project__tag">Computer vision</p>
+              <h3>Object Detection with YOLO</h3>
+              <p>Implemented a simplified YOLO model from scratch and extended YOLOv7 with Coordinate Attention to explore improvements in small object detection.</p>
+            </div>
+            <a href="https://github.com/pacots" target="_blank" rel="noopener">View on GitHub →</a>
+          </article>
 
-    <section id="education" class="section light">
-      <div class="container">
-        <div class="section__header">
-          <p class="eyebrow">Education</p>
-          <h2>Dual master's path</h2>
-        </div>
-        <div class="cards">
-          <article>
-            <header>
-              <h3>M.S. in Artificial Intelligence - Illinois Institute of Technology</h3>
-              <p>Aug 2025 - Jul 2026 - GPA 4.0 (Fall semester)</p>
-            </header>
-            <ul class="course-list">
-              <li>Machine Learning</li>
-              <li>Deep Learning</li>
-              <li>Big Data Technologies</li>
-              <li>Advanced Artificial Intelligence</li>
-              <li>Time Series Analysis and Forecasting</li>
-              <li>Optimization and AI</li>
-            </ul>
+          <article class="project">
+            <div>
+              <p class="project__tag">Forecasting</p>
+              <h3>Time Series Forecasting (M4 Benchmark)</h3>
+              <p>Built an R-based benchmarking pipeline to compare statistical and machine learning models on the M4 Monthly dataset using standard forecasting metrics.</p>
+            </div>
+            <a href="https://github.com/pacots" target="_blank" rel="noopener">View on GitHub →</a>
           </article>
-          <article>
-            <header>
-              <h3>Master in Computer Engineering - Polytechnic University of Madrid</h3>
-              <p>Sep 2024 - Jul 2026 - GPA 3.4</p>
-            </header>
-            <p>Part of the double master program with IIT focused on distributed systems and optimization.</p>
-            <ul class="course-list">
-              <li>Emerging Technologies and Business Opportunities</li>
-              <li>Intelligent Systems</li>
-              <li>Intelligent Data Analysis</li>
-              <li>Interactive Systems</li>
-              <li>Embedded and Ubiquitous Systems</li>
-              <li>Data Processes</li>
-              <li>Advanced Software Engineering</li>
-            </ul>
+
+          <article class="project">
+            <div>
+              <p class="project__tag">Systems</p>
+              <h3>Minishell</h3>
+              <p>Built a UNIX-style shell in C with command piping, environment management, and error handling.</p>
+            </div>
+            <a href="https://github.com/pacots" target="_blank" rel="noopener">View on GitHub →</a>
           </article>
-          <article>
-            <header>
-              <h3>Double Degree in Computer Engineering & Business Management - Polytechnic University of Madrid</h3>
-              <p>Sep 2019 - Jul 2024 - GPA 3.5</p>
-            </header>
-            <p>Completed both theses: fuzzy preference decision-making (engineering) and capital structure optimization (business).</p>
+
+          <article class="project">
+            <div>
+              <p class="project__tag">Graphics</p>
+              <h3>Asteroid Field</h3>
+              <p>Created a procedural 3D scene in C++ and OpenGL using GPU tessellation, frustum culling, and instanced rendering.</p>
+            </div>
+            <a href="https://github.com/pacots" target="_blank" rel="noopener">View on GitHub →</a>
           </article>
         </div>
       </div>
@@ -213,86 +726,95 @@
 
     <section id="skills" class="section">
       <div class="container">
-        <div class="section__header">
-          <p class="eyebrow">Skills</p>
-          <h2>Everyday stack</h2>
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Skills</p>
+            <h2>Technical toolkit</h2>
+          </div>
+          <p>A concise overview of the technologies and areas I have worked with most.</p>
         </div>
-        <div class="grid skills">
-          <article>
-            <h3>Languages</h3>
-            <p>Python, Java, TypeScript, SQL, C, C++.</p>
+
+        <div class="skills-grid">
+          <article class="skill">
+            <h3>Programming</h3>
+            <p>Python, Java, TypeScript, SQL, C, C++</p>
           </article>
-          <article>
+
+          <article class="skill">
+            <h3>Frameworks & tools</h3>
+            <p>Node.js, Angular, RabbitMQ, Airflow, MongoDB, Git, Kubernetes, Docker</p>
+          </article>
+
+          <article class="skill">
             <h3>AI & data</h3>
-            <p>Machine Learning, Deep Learning, Apache Airflow, MongoDB, RabbitMQ.</p>
+            <p>Machine Learning, Deep Learning, ETL pipelines, Time Series Forecasting</p>
           </article>
-          <article>
-            <h3>Tools</h3>
-            <p>Git, Docker basics, Kubernetes, Bash scripting.</p>
-          </article>
-          <article>
-            <h3>Languages spoken</h3>
-            <p>Spanish (native) - English (C1 IELTS + Cambridge).</p>
+
+          <article class="skill">
+            <h3>Languages</h3>
+            <p>Spanish (Native), English (C1)</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="scholarships" class="section light">
+    <section id="contact" class="section">
       <div class="container">
-        <div class="section__header">
-          <p class="eyebrow">Scholarships & activities</p>
-          <h2>Communities</h2>
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Get in touch.</h2>
+          </div>
+          <p>The best way to reach me is by email or LinkedIn.</p>
         </div>
-        <div class="grid">
-          <article>
-            <h3>IEEE - Eta Kappa Nu</h3>
-            <p>Honor society member.</p>
-          </article>
-          <article>
-            <h3>Excellence Scholarship</h3>
-            <p>Community of Madrid (2020-2023).</p>
-          </article>
-          <article>
-            <h3>ACM Team Programming</h3>
-            <p>Competitor in 2021 and 2022.</p>
-          </article>
-          <article>
-            <h3>Bayer–Agorize Open Innovation</h3>
-            <p>2022 participant focused on data science.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact" class="section contact">
-      <div class="container">
-        <div class="section__header">
-          <p class="eyebrow">Contact</p>
-          <h2>Let's keep it simple</h2>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Contact details</h3>
+            <div class="contact-list">
+              <div class="contact-row">
+                <span>Email</span>
+                <a href="mailto:sara.rod.rojo@gmail.com">sara.rod.rojo@gmail.com</a>
+              </div>
+              <div class="contact-row">
+                <span>Phone</span>
+                <a href="tel:+18722000481">(872) 200-0481</a>
+              </div>
+              <div class="contact-row">
+                <span>LinkedIn</span>
+                <a href="https://www.linkedin.com/in/sara-rodriguez-rojo/" target="_blank" rel="noopener">linkedin.com/in/sara-rodriguez-rojo</a>
+              </div>
+              <div class="contact-row">
+                <span>GitHub</span>
+                <a href="https://github.com/pacots" target="_blank" rel="noopener">github.com/pacots</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="contact-card">
+            <h3>Based in</h3>
+            <p>Chicago, Illinois.</p>
+            <p style="margin-top: 0.8rem;">Open to software engineering and AI-related opportunities with strong teams, interesting technical challenges, and room to keep growing.</p>
+          </article>
         </div>
-        <p>Email: <a href="mailto:sara.rod.rojo@gmail.com">sara.rod.rojo@gmail.com</a></p>
-        <p>Phone: <a href="tel:+18722000481">+1 (872) 200 0481</a> - Chicago, Illinois</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/sara-rodriguez-rojo/" target="_blank" rel="noopener">linkedin.com/in/sara-rodriguez-rojo</a></p>
-        <p>GitHub: <a href="https://github.com/pacots" target="_blank" rel="noopener">github.com/pacots</a></p>
-        <p>I reply within a day and I'm happy to share references or coursework details.</p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 - Sara Rodriguez Rojo</p>
+      <p>© 2026 Sara Rodriguez Rojo</p>
     </div>
   </footer>
 
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('#site-nav');
+
     if (toggle && nav) {
       toggle.addEventListener('click', () => {
-        const open = nav.classList.toggle('site-nav--open');
-        toggle.setAttribute('aria-expanded', String(open));
+        const isOpen = nav.classList.toggle('site-nav--open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
       });
     }
   </script>
