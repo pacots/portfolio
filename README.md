@@ -4,7 +4,8 @@ Single-page site.
 
 ## Highlights
 
-- Sections cover Summary, About, Experience, Projects, Education, Skills, Scholarships/Activities, and Contact.
+- Sections cover Hero, About, Experience, Projects, Stack, Education, and Contact.
+- Includes automatic English/Spanish language detection with a manual toggle.
 
 ## Project structure
 
