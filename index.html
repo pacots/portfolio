@@ -6,114 +6,187 @@
   <title>Sara Rodriguez Rojo | Software Engineer</title>
   <meta
     name="description"
-    content="Sara Rodriguez Rojo builds software systems, data pipelines, and practical AI projects from Chicago."
+    content="Software engineer interested in programming, data, AI, and building useful products."
   />
-  <meta name="theme-color" content="#f6f0e8" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,650&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#f6f7f2" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="top">
-    <div class="container header-layout">
-      <a class="brand" href="#top" aria-label="Sara Rodriguez Rojo">
-        <span>Sara</span>
-        <span>Rodriguez</span>
-      </a>
-
-      <div class="header-actions">
-        <button class="language-toggle" type="button" aria-label="Cambiar idioma" data-lang-toggle>
-          <span data-lang-label>ES</span>
-        </button>
-        <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
-        </button>
-      </div>
-
-      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-        <a href="#about" data-i18n="nav.about">About</a>
-        <a href="#experience" data-i18n="nav.experience">Experience</a>
-        <a href="#projects" data-i18n="nav.projects">Projects</a>
-        <a href="#skills" data-i18n="nav.skills">Stack</a>
-        <a href="#contact" data-i18n="nav.contact">Contact</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#main">Sara Rodriguez Rojo</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-layout">
-        <div class="hero-copy">
-          <p class="eyebrow" data-i18n="hero.eyebrow">Software engineer · Chicago</p>
-          <h1 id="hero-title" data-i18n="hero.title">Software engineering and applied AI.</h1>
-          <p class="hero-summary" data-i18n="hero.summary">
-            I mainly work on backend services, ETL pipelines and AI-related projects.
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-main">
+          <p class="eyebrow">Sara Rodriguez Rojo</p>
+          <h1>Software Engineer</h1>
+          <p class="intro-text">
+            I have a background in Computer Engineering and Business Administration, and I am
+            currently completing an M.A.S. in Artificial Intelligence at Illinois Tech. I have
+            experience building backend and frontend features, data ingestion services, ETL
+            workflows and AI/data projects.
           </p>
-          <div class="hero-actions" aria-label="Main links">
-            <a class="button button--ink" href="mailto:sara.rod.rojo@gmail.com" data-i18n="hero.email">Email me</a>
-            <a class="button button--ghost" href="https://www.linkedin.com/in/sara-rodriguez-rojo/" target="_blank" rel="noopener" data-i18n="hero.linkedin">LinkedIn</a>
-            <a class="button button--ghost" href="https://github.com/pacots" target="_blank" rel="noopener" data-i18n="hero.github">GitHub</a>
+          <div class="actions" aria-label="Main links">
+            <a class="button button-dark" href="mailto:sara.rod.rojo@gmail.com">Email</a>
+            <a class="button" href="https://www.linkedin.com/in/sara-rodriguez-rojo/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="button" href="https://github.com/pacots" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
 
-        <aside class="hero-panel" aria-label="Current status">
-          <div class="panel-topline">
-            <span data-i18n="hero.panelLabel">Education</span>
-            <span>2026</span>
-          </div>
-          <p data-i18n="hero.panelText">
-            MAS in Artificial Intelligence at Illinois Tech. Software engineering background and experience in backend development.
-          </p>
-        </aside>
+        <figure class="hero-photo">
+          <img src="assets/me.png" alt="Sara Rodriguez Rojo" />
+        </figure>
+      </div>
+
+      <div class="container stack-strip" aria-label="Technical stack">
+        <article>
+          <span>Stack</span>
+          <p>Python, TypeScript, Node.js, SQL, RabbitMQ, Airflow, Docker, C++, Java.</p>
+        </article>
       </div>
     </section>
 
-    <section id="about" class="section section--intro">
-      <div class="container split-section">
+    <section id="projects" class="section">
+      <div class="container section-grid">
         <div class="section-heading">
-          <p class="eyebrow" data-i18n="about.eyebrow">About</p>
-          <h2 data-i18n="about.title">About me</h2>
+          <p class="eyebrow">Projects</p>
+          <h2>Selected work</h2>
+          <p>Side projects and academic work.</p>
         </div>
-        <div class="prose-block">
-          <p data-i18n="about.p1">
-            I am a software engineer studying AI in Chicago. I enjoy building the parts of a product that make everything work: services, queues, data jobs and integrations.
-          </p>
-          <p data-i18n="about.p2">
-            My background combines computer engineering and business, so I tend to think about both the technical side and the product.
-          </p>
+
+        <div class="projects">
+          <article class="project project-featured">
+            <div class="project-top">
+              <p class="badge">In progress</p>
+              <a href="https://github.com/pacots/homer" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <h3>Homer</h3>
+            <p>
+              AI-powered home assistant for meal planning and kitchen management. It is being built
+              around a food database, shopping lists, expiration tracking, preferences, services, tests,
+              prompts, and deployment infrastructure.
+            </p>
+            <div class="chips">
+              <span>AI product</span>
+              <span>Services</span>
+              <span>Kubernetes</span>
+              <span>Raspberry Pi</span>
+            </div>
+          </article>
+
+          <article class="project project-featured">
+            <div class="project-top">
+              <p class="badge">In progress</p>
+              <a href="https://github.com/pacots/demand-forecast" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <h3>Demand Forecast</h3>
+            <p>
+              Micro-SaaS concept for small e-commerce sellers: upload sales history, generate
+              a four-week product demand forecast, and flag items that may run low.
+            </p>
+            <div class="chips">
+              <span>Python</span>
+              <span>Forecasting</span>
+              <span>Backend</span>
+              <span>Product scope</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <p class="badge">Computer vision</p>
+              <a href="https://github.com/pacots/YOLOv7-CoordinateAttention" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <h3>YOLOv7 Coordinate Attention</h3>
+            <p>YOLOv7 experiment with Coordinate Attention to explore improvements in small object detection.</p>
+            <div class="chips">
+              <span>Deep learning</span>
+              <span>Object detection</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <p class="badge">Computer vision</p>
+              <a href="https://github.com/pacots/YOLOv0" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <h3>YOLOv0</h3>
+            <p>Educational notebook implementing the core YOLO idea and a simplified object detection model.</p>
+            <div class="chips">
+              <span>Notebook</span>
+              <span>ML fundamentals</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <p class="badge">Graphics</p>
+              <a href="https://github.com/pacots/asteroid-field" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <h3>Asteroid Field</h3>
+            <p>C++ and OpenGL 3D scene with procedural asteroids, instanced rendering, tessellation, and frustum culling.</p>
+            <div class="chips">
+              <span>C++</span>
+              <span>OpenGL</span>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-top">
+              <p class="badge">Forecasting</p>
+              <a href="https://github.com/pacots/time-series" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <h3>Time Series Benchmark</h3>
+            <p>R pipeline comparing statistical and machine learning forecasting models on the M4 Monthly dataset.</p>
+            <div class="chips">
+              <span>R</span>
+              <span>Forecasting</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-heading section-heading--wide">
-          <p class="eyebrow" data-i18n="experience.eyebrow">Experience</p>
-          <h2 data-i18n="experience.title">Experience</h2>
+    <section id="experience" class="section section-muted">
+      <div class="container section-grid">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2>Work</h2>
         </div>
 
         <div class="timeline">
           <article class="timeline-item">
-            <div class="timeline-date">Oct 2024 - Jul 2025</div>
+            <p class="date">Oct 2024 - Jul 2025</p>
             <div>
-              <h3 data-i18n="experience.oxigent.role">Consultant, Junior Associate · Oxigent Technologies</h3>
-              <p data-i18n="experience.oxigent.text">
-                Built backend and frontend features in an international Agile team. Developed an event-driven email alert microservice for a Jira-style ticketing system with Node.js and RabbitMQ, handling 25,000+ monthly events and notifications for enterprise energy clients.
+              <h3>Consultant, Junior Associate | Oxigent Technologies</h3>
+              <p>
+                Built backend and frontend features in an international Agile team. Developed an
+                event-driven email alert microservice with Node.js and RabbitMQ, processing 25,000+
+                monthly events for enterprise energy clients.
               </p>
             </div>
           </article>
 
           <article class="timeline-item">
-            <div class="timeline-date">Feb 2024 - Aug 2024</div>
+            <p class="date">Feb 2024 - Aug 2024</p>
             <div>
-              <h3 data-i18n="experience.dnv.role">Software Developer Intern · DNV Green Power Monitor</h3>
-              <p data-i18n="experience.dnv.text">
-                Migrated five data ingestion microservices from TypeScript to Python, built fault-tolerant ETL workflows with Apache Airflow, and shipped services and dashboards for renewable energy platforms using Node.js, Angular, and MongoDB.
+              <h3>Software Developer Intern | DNV Green Power Monitor</h3>
+              <p>
+                Migrated data ingestion microservices from TypeScript to Python. Built ETL workflows
+                with Apache Airflow and worked on renewable energy dashboards using Node.js, Angular,
+                and MongoDB.
               </p>
             </div>
           </article>
@@ -121,316 +194,62 @@
       </div>
     </section>
 
-    <section id="projects" class="section section--ink">
-      <div class="container">
-        <div class="section-heading section-heading--wide">
-          <p class="eyebrow" data-i18n="projects.eyebrow">Projects</p>
-          <h2 data-i18n="projects.title">Selected projects</h2>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card project-card--large">
-            <p class="project-tag">Computer vision</p>
-            <h3 data-i18n="projects.yolo.title">Object detection with YOLO</h3>
-            <p data-i18n="projects.yolo.text">A simplified YOLO model from scratch, plus YOLOv7 extended with Coordinate Attention to explore small object detection.</p>
-            <a href="https://github.com/pacots/YOLOv7-CoordinateAttention" target="_blank" rel="noopener" data-i18n="projects.link">Open project</a>
-          </article>
-
-          <article class="project-card">
-            <p class="project-tag">Forecasting</p>
-            <h3 data-i18n="projects.time.title">M4 time series benchmark</h3>
-            <p data-i18n="projects.time.text">An R pipeline comparing statistical and ML forecasting models on the M4 Monthly dataset.</p>
-            <a href="https://github.com/pacots/time-series" target="_blank" rel="noopener" data-i18n="projects.link">Open project</a>
-          </article>
-
-          <article class="project-card">
-            <p class="project-tag">Systems</p>
-            <h3 data-i18n="projects.minishell.title">Minishell</h3>
-            <p data-i18n="projects.minishell.text">A UNIX-style shell in C with piping, environment handling, and careful error behavior.</p>
-            <a href="https://gitfront.io/r/user-1266459/MexsQZRaCHWV/Minishell/" target="_blank" rel="noopener" data-i18n="projects.link">Open project</a>
-          </article>
-
-          <article class="project-card">
-            <p class="project-tag">Graphics</p>
-            <h3 data-i18n="projects.asteroid.title">Asteroid Field</h3>
-            <p data-i18n="projects.asteroid.text">A procedural 3D scene in C++ and OpenGL with tessellation, frustum culling, and instanced rendering.</p>
-            <a href="https://github.com/pacots/asteroid-field" target="_blank" rel="noopener" data-i18n="projects.link">Open project</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section">
-      <div class="container">
-        <div class="section-heading section-heading--wide">
-          <p class="eyebrow" data-i18n="skills.eyebrow">Stack</p>
-          <h2 data-i18n="skills.title">Technical stack</h2>
-        </div>
-
-        <div class="stack-board" aria-label="Technical skills">
-          <article>
-            <span>01</span>
-            <h3 data-i18n="skills.design.title">Software design</h3>
-            <p data-i18n="skills.design.text">Architecture, event-driven systems, clean code, scalability.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3 data-i18n="skills.code.title">Programming</h3>
-            <p>Python, TypeScript, SQL, C, C++, Java.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3 data-i18n="skills.ai.title">AI and data</h3>
-            <p data-i18n="skills.ai.text">Machine learning, deep learning, LLMs, agentic systems, forecasting.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3 data-i18n="skills.tools.title">Tools</h3>
-            <p>Node.js, Docker, Git, MongoDB, RabbitMQ, Airflow, REST APIs.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="section section--paper">
-      <div class="container education-layout">
+    <section id="education" class="section">
+      <div class="container section-grid">
         <div class="section-heading">
-          <p class="eyebrow" data-i18n="education.eyebrow">Education</p>
-          <h2 data-i18n="education.title">Education</h2>
+          <p class="eyebrow">Education</p>
+          <h2>Education</h2>
         </div>
 
         <div class="education-list">
-          <article>
-            <p class="timeline-date">Aug 2025 - Aug 2026</p>
-            <h3 data-i18n="education.iit.title">M.A.S. in Artificial Intelligence · Illinois Institute of Technology</h3>
-            <p data-i18n="education.iit.text">Current GPA: 4.0/4.0 · Advanced AI, Time Series Analysis and Forecasting, Machine Learning.</p>
+          <article class="education-item">
+            <p class="date">Aug 2025 - Aug 2026</p>
+            <div>
+              <h3>M.A.S. in Artificial Intelligence</h3>
+              <p class="school">Illinois Institute of Technology</p>
+              <p>GPA: 4.0/4.0. Advanced AI, Time Series Analysis and Forecasting, Machine Learning.</p>
+            </div>
           </article>
-          <article>
-            <p class="timeline-date">Sep 2024 - Aug 2026</p>
-            <h3 data-i18n="education.upmms.title">M.S. in Computer Engineering · Polytechnic University of Madrid</h3>
-            <p data-i18n="education.upmms.text">GPA: 3.4/4.0 · Dual Master's Degree Program.</p>
+          <article class="education-item">
+            <p class="date">Sep 2024 - Aug 2026</p>
+            <div>
+              <h3>M.S. in Computer Engineering</h3>
+              <p class="school">Polytechnic University of Madrid</p>
+              <p>GPA: 3.4/4.0. Dual Master's Degree Program.</p>
+            </div>
           </article>
-          <article>
-            <p class="timeline-date">Sep 2019 - Jul 2024</p>
-            <h3 data-i18n="education.upmbs.title">Dual Bachelor's Degree: Computer Engineering and Business Administration</h3>
-            <p data-i18n="education.upmbs.text">Polytechnic University of Madrid · GPA: 3.5/4.0.</p>
+          <article class="education-item">
+            <p class="date">Sep 2019 - Jul 2024</p>
+            <div>
+              <h3>Dual Degree in Computer Engineering and Business Administration</h3>
+              <p class="school">Polytechnic University of Madrid</p>
+              <p>GPA: 3.5/4.0.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section contact-section">
-      <div class="container contact-layout">
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
         <div>
-          <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
-          <h2 data-i18n="contact.title">Contact</h2>
-          <p data-i18n="contact.text">
-            I am based in Chicago and open to software engineering and AI-related opportunities.
-          </p>
+          <p class="eyebrow">Contact</p>
+          <h2>Contact</h2>
         </div>
-
         <div class="contact-links">
-          <a href="mailto:sara.rod.rojo@gmail.com">
-            <span>Email</span>
-            sara.rod.rojo@gmail.com
-          </a>
-          <a href="tel:+18722000481">
-            <span data-i18n="contact.phone">Phone</span>
-            (872) 200-0481
-          </a>
-          <a href="https://www.linkedin.com/in/sara-rodriguez-rojo/" target="_blank" rel="noopener">
-            <span>LinkedIn</span>
-            /in/sara-rodriguez-rojo
-          </a>
-          <a href="https://github.com/pacots" target="_blank" rel="noopener">
-            <span>GitHub</span>
-            @pacots
-          </a>
+          <a href="mailto:sara.rod.rojo@gmail.com">sara.rod.rojo@gmail.com</a>
+          <a href="https://www.linkedin.com/in/sara-rodriguez-rojo/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/pacots" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-layout">
-      <p data-i18n="footer.copy">© 2026 Sara Rodriguez Rojo</p>
-      <a href="#top" data-i18n="footer.top">Back to top</a>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Sara Rodriguez Rojo</p>
+      <a href="#main">Back to top</a>
     </div>
   </footer>
-
-  <script>
-    const translations = {
-      en: {
-        "skip": "Skip to content",
-        "nav.about": "About",
-        "nav.experience": "Experience",
-        "nav.projects": "Projects",
-        "nav.skills": "Stack",
-        "nav.contact": "Contact",
-        "hero.eyebrow": "Software engineer · Chicago",
-        "hero.title": "Software engineering and applied AI.",
-        "hero.summary": "I mainly work on backend services, ETL pipelines and AI-related projects.",
-        "hero.email": "Email me",
-        "hero.linkedin": "LinkedIn",
-        "hero.github": "GitHub",
-        "hero.panelLabel": "Education",
-        "hero.panelText": "MAS in Artificial Intelligence at Illinois Tech. Software engineering background and experience in backend development.",
-        "about.eyebrow": "About",
-        "about.title": "About me",
-        "about.p1": "I am a software engineer studying AI in Chicago. I enjoy building the parts of a product that make everything work: services, queues, data jobs and integrations.",
-        "about.p2": "My background combines computer engineering and business, so I tend to think about both the technical side and the product.",
-        "experience.eyebrow": "Experience",
-        "experience.title": "Experience",
-        "experience.oxigent.role": "Consultant, Junior Associate · Oxigent Technologies",
-        "experience.oxigent.text": "Built backend and frontend features in an international Agile team. Developed an event-driven email alert microservice for a Jira-style ticketing system with Node.js and RabbitMQ, handling 25,000+ monthly events and notifications for enterprise energy clients.",
-        "experience.dnv.role": "Software Developer Intern · DNV Green Power Monitor",
-        "experience.dnv.text": "Migrated five data ingestion microservices from TypeScript to Python, built fault-tolerant ETL workflows with Apache Airflow, and shipped services and dashboards for renewable energy platforms using Node.js, Angular, and MongoDB.",
-        "projects.eyebrow": "Projects",
-        "projects.title": "Selected projects",
-        "projects.yolo.title": "Object detection with YOLO",
-        "projects.yolo.text": "A simplified YOLO model from scratch, plus YOLOv7 extended with Coordinate Attention to explore small object detection.",
-        "projects.time.title": "M4 time series benchmark",
-        "projects.time.text": "An R pipeline comparing statistical and ML forecasting models on the M4 Monthly dataset.",
-        "projects.minishell.title": "Minishell",
-        "projects.minishell.text": "A UNIX-style shell in C with piping, environment handling, and careful error behavior.",
-        "projects.asteroid.title": "Asteroid Field",
-        "projects.asteroid.text": "A procedural 3D scene in C++ and OpenGL with tessellation, frustum culling, and instanced rendering.",
-        "projects.link": "Open project",
-        "skills.eyebrow": "Stack",
-        "skills.title": "Technical stack",
-        "skills.design.title": "Software design",
-        "skills.design.text": "Architecture, event-driven systems, clean code, scalability.",
-        "skills.code.title": "Programming",
-        "skills.ai.title": "AI and data",
-        "skills.ai.text": "Machine learning, deep learning, LLMs, agentic systems, forecasting.",
-        "skills.tools.title": "Tools",
-        "education.eyebrow": "Education",
-        "education.title": "Education",
-        "education.iit.title": "M.A.S. in Artificial Intelligence · Illinois Institute of Technology",
-        "education.iit.text": "Current GPA: 4.0/4.0 · Advanced AI, Time Series Analysis and Forecasting, Machine Learning.",
-        "education.upmms.title": "M.S. in Computer Engineering · Polytechnic University of Madrid",
-        "education.upmms.text": "GPA: 3.4/4.0 · Dual Master's Degree Program.",
-        "education.upmbs.title": "Dual Bachelor's Degree: Computer Engineering and Business Administration",
-        "education.upmbs.text": "Polytechnic University of Madrid · GPA: 3.5/4.0.",
-        "contact.eyebrow": "Contact",
-        "contact.title": "Contact",
-        "contact.text": "I am based in Chicago and open to software engineering and AI-related opportunities.",
-        "contact.phone": "Phone",
-        "footer.copy": "© 2026 Sara Rodriguez Rojo",
-        "footer.top": "Back to top"
-      },
-      es: {
-        "skip": "Saltar al contenido",
-        "nav.about": "Sobre mí",
-        "nav.experience": "Experiencia",
-        "nav.projects": "Proyectos",
-        "nav.skills": "Stack",
-        "nav.contact": "Contacto",
-        "hero.eyebrow": "Software engineer · Chicago",
-        "hero.title": "Ingeniería de software e IA aplicada.",
-        "hero.summary": "Trabajo sobre todo en servicios backend, pipelines ETL y proyectos relacionados con IA.",
-        "hero.email": "Escríbeme",
-        "hero.linkedin": "LinkedIn",
-        "hero.github": "GitHub",
-        "hero.panelLabel": "Formación",
-        "hero.panelText": "Máster en Inteligencia Artificial en Illinois Tech. Formación en ingeniería informática y experiencia en desarrollo backend.",
-        "about.eyebrow": "Sobre mí",
-        "about.title": "Sobre mí",
-        "about.p1": "Soy ingeniera de software y estudio IA en Chicago. Me gusta construir las partes que hacen que un producto funcione bien: servicios, colas, procesos de datos e integraciones.",
-        "about.p2": "Mi formación combina ingeniería informática y administración de empresas, así que suelo pensar tanto en la parte técnica como en el producto.",
-        "experience.eyebrow": "Experiencia",
-        "experience.title": "Experiencia",
-        "experience.oxigent.role": "Consultant, Junior Associate · Oxigent Technologies",
-        "experience.oxigent.text": "Desarrollé funcionalidades backend y frontend dentro de un equipo Agile internacional. También construí un microservicio de alertas por email, orientado a eventos, para un sistema tipo Jira con Node.js y RabbitMQ, procesando más de 25.000 eventos y notificaciones mensuales para clientes enterprise del sector energético.",
-        "experience.dnv.role": "Software Developer Intern · DNV Green Power Monitor",
-        "experience.dnv.text": "Migré cinco microservicios de ingesta de datos de TypeScript a Python, monté flujos ETL más resistentes con Apache Airflow y desarrollé servicios y dashboards para plataformas de gestión de energía renovable con Node.js, Angular y MongoDB.",
-        "projects.eyebrow": "Proyectos",
-        "projects.title": "Proyectos destacados",
-        "projects.yolo.title": "Detección de objetos con YOLO",
-        "projects.yolo.text": "Un modelo YOLO simplificado desde cero, además de YOLOv7 extendido con Coordinate Attention para explorar mejoras en detección de objetos pequeños.",
-        "projects.time.title": "Benchmark de series temporales M4",
-        "projects.time.text": "Un pipeline en R para comparar modelos estadísticos y de machine learning sobre el dataset mensual M4.",
-        "projects.minishell.title": "Minishell",
-        "projects.minishell.text": "Una shell estilo UNIX en C con pipes, gestión de entorno y control cuidadoso de errores.",
-        "projects.asteroid.title": "Asteroid Field",
-        "projects.asteroid.text": "Una escena 3D procedural en C++ y OpenGL con tessellation en GPU, frustum culling e instanced rendering.",
-        "projects.link": "Ver proyecto",
-        "skills.eyebrow": "Stack",
-        "skills.title": "Stack técnico",
-        "skills.design.title": "Diseño de software",
-        "skills.design.text": "Arquitectura, sistemas event-driven, clean code, escalabilidad.",
-        "skills.code.title": "Programación",
-        "skills.ai.title": "IA y datos",
-        "skills.ai.text": "Machine learning, deep learning, LLMs, sistemas agénticos, forecasting.",
-        "skills.tools.title": "Herramientas",
-        "education.eyebrow": "Formación",
-        "education.title": "Formación",
-        "education.iit.title": "M.A.S. in Artificial Intelligence · Illinois Institute of Technology",
-        "education.iit.text": "GPA actual: 4.0/4.0 · Advanced AI, Time Series Analysis and Forecasting, Machine Learning.",
-        "education.upmms.title": "M.S. in Computer Engineering · Universidad Politécnica de Madrid",
-        "education.upmms.text": "GPA: 3.4/4.0 · Programa de doble máster.",
-        "education.upmbs.title": "Doble grado: Ingeniería Informática y Administración de Empresas",
-        "education.upmbs.text": "Universidad Politécnica de Madrid · GPA: 3.5/4.0.",
-        "contact.eyebrow": "Contacto",
-        "contact.title": "Contacto",
-        "contact.text": "Estoy en Chicago y abierta a oportunidades de ingeniería de software e IA.",
-        "contact.phone": "Teléfono",
-        "footer.copy": "© 2026 Sara Rodriguez Rojo",
-        "footer.top": "Volver arriba"
-      }
-    };
-
-    const navToggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector("#site-nav");
-    const langToggle = document.querySelector("[data-lang-toggle]");
-    const langLabel = document.querySelector("[data-lang-label]");
-    const translatableNodes = document.querySelectorAll("[data-i18n]");
-
-    const getInitialLanguage = () => {
-      const stored = localStorage.getItem("portfolio-language");
-      if (stored === "en" || stored === "es") return stored;
-      return navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
-    };
-
-    const applyLanguage = (lang) => {
-      const dictionary = translations[lang];
-      document.documentElement.lang = lang;
-      document.title = lang === "es"
-        ? "Sara Rodriguez Rojo | Ingeniera de software"
-        : "Sara Rodriguez Rojo | Software Engineer";
-
-      translatableNodes.forEach((node) => {
-        const key = node.dataset.i18n;
-        if (dictionary[key]) node.textContent = dictionary[key];
-      });
-
-      langLabel.textContent = lang === "es" ? "EN" : "ES";
-      langToggle.setAttribute("aria-label", lang === "es" ? "Switch to English" : "Cambiar a español");
-      localStorage.setItem("portfolio-language", lang);
-    };
-
-    if (navToggle && nav) {
-      navToggle.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("site-nav--open");
-        navToggle.setAttribute("aria-expanded", String(isOpen));
-      });
-
-      nav.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          nav.classList.remove("site-nav--open");
-          navToggle.setAttribute("aria-expanded", "false");
-        });
-      });
-    }
-
-    if (langToggle) {
-      langToggle.addEventListener("click", () => {
-        const next = document.documentElement.lang === "es" ? "en" : "es";
-        applyLanguage(next);
-      });
-    }
-
-    applyLanguage(getInitialLanguage());
-  </script>
 </body>
 </html>
